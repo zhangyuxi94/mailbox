@@ -51,6 +51,11 @@
                 userInfo:userdata
             }
         });
+        app.directive("myNavbar",function(){
+            return{
+                templateUrl:"../views/navTemplate.html"
+            }
+        });
         app.controller("loginController",loginController);
         app.controller("profileController",profileController);
         app.controller("messageController",messageController);

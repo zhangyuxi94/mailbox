@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Abel';
+    color: #61413f;
+}
+
+/*navbar*/
+.container-fluid{
+    background-color: #783441;
+}
+
+#navbarLink a{
+    color: white;
+}
+
+#navbarLink a:hover{
+    color: white;
+}
+/*loginPage*/
+#loginForm{
+    position: relative;
+    width:40%;
+    margin: 100px auto 0 auto;
+    padding: 40px 20px 40px 20px;
+    background-color: rgba(224, 213, 207, 0.96);
+    border-radius: 10px;
+    color: #773340;
+    z-index: 0;
+    -webkit-box-shadow: 1px 2px 6px 1px rgba(0,0,0,0.16) ;
+    box-shadow: 1px 2px 6px 1px rgba(0,0,0,0.16) ;
+}
+
+#loginForm .btn-default{
+    background-color: #773340;
+    color: white;
+    width: 100%;
+}
+/*profilePage*/
+#profileForm{
+    background-color: #efe5e0;
+    width: 100%;
+    /*margin: 0 auto;*/
+    position: relative;
+    /*width:60%;*/
+    margin: 50px auto;
+    padding: 20px 20px 20px 20px;
+    background-color: rgba(225, 214, 208, 0.96);
+    border-radius: 10px;
+    color: #773340;
+    z-index: 0;
+    -webkit-box-shadow: 1px 2px 6px 1px rgba(0,0,0,0.16) ;
+    box-shadow: 1px 2px 6px 1px rgba(0,0,0,0.16) ;
+}
+
+#profileForm legend .btn{
+    color: white;
+    background-color: #773340;
+    margin-left: 10px;
+    padding: 2px 10px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*message Page*/
+.messagePage{
+    position: relative;
+    width:90%;
+    margin: 50px auto;
+    border-radius: 10px;
+    color: #773340;
+}
+
+.messagePage ul{
+    list-style: none;
+    padding-left: 10px;
+    margin-bottom: 0;
+}
+
+.messagePage ul li{
+    background-color: rgba(152, 135, 143, 0.96);
+    border-radius: 10px 10px 0 0;
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+.messagePage ul a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#messageBox{
+    padding: 20px;
+    position: relative;
+    background-color: rgba(239, 228, 223, 0.96);
+    border-radius: 10px;
+    color: #773340;
+}
+
+/*messageInbox*/
+#messageBox .table th{
+    background-color: #98878f;
+    color: white;
+}
+#messageBox .table tr input[type=button]{
+    border: 0;
+    border-radius: 3px;
+    margin: 0 5px;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.stared{
+    background-color:#f0ad50;
+    color:#ffffff
+}
+
+.notstared{
+    background-color: #ffffff;
+    color: #f0ad51
+}
