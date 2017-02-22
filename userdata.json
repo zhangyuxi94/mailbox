@@ -1,0 +1,141 @@
+[{
+  "userid":"1",
+  "username":"yuxi",
+  "password":"yuxi",
+  "name":"Yuxi Zhang",
+  "email":"yuxi@gmail.com",
+  "phone":"7028570160",
+  "location":"MA",
+  "inbox":[
+    {
+      "msgid":"1.1",
+      "recieverid":"1",
+      "reciever":"yuxi",
+      "senderid":"2",
+      "sender":"henry",
+      "subject":"Hello From Henry",
+      "content":"This is the test message from Henry to Yuxi",
+      "star":false
+    },
+    {
+      "msgid":"1.2",
+      "recieverid":"1",
+      "reciever":"yuxi",
+      "senderid":"3",
+      "sender":"qian",
+      "subject":"Hello From Qian",
+      "content":"Test message from Qian to Yuxi",
+      "star":false
+    }
+  ],
+  "sentmail":[
+    {
+      "msgid":"2.1",
+      "recieverid":"2",
+      "reciever":"henry",
+      "senderid":"1",
+      "sender":"yuxi",
+      "subject":"Hello From Yuxi",
+      "content":"Test message from Yuxi to Henry",
+      "star":false
+    },
+    {
+      "msgid":"3.1",
+      "recieverid":"3",
+      "reciever":"qian",
+      "senderid":"1",
+      "sender":"yuxi",
+      "subject":"Hello From Yuxi",
+      "content":"Test message from Yuxi to Qian",
+      "star":false
+    }
+  ]
+},
+
+  {
+    "userid":"2",
+    "username":"henry",
+    "password":"henry",
+    "name":"Henry Dong",
+    "email":"henry@gmail.com",
+    "phone":"2132321231",
+    "location":"NJ",
+    "inbox":[
+      {
+        "msgid":"2.1",
+        "recieverid":"2",
+        "reciever":"henry",
+        "senderid":"1",
+        "sender":"yuxi",
+        "subject":"Hello From Yuxi",
+        "content":"Test message from Yuxi to Henry",
+        "star":false
+      },
+      {
+        "msgid":"2.2",
+        "recieverid":"2",
+        "reciever":"henry",
+        "senderid":"3",
+        "sender":"qian",
+        "subject":"Hello From Qian",
+        "content":"Test message from Qian to Henry",
+        "star":false
+      }
+    ],
+    "sentmail":[
+      {
+        "msgid":"1.1",
+        "recieverid":"1",
+        "reciever":"yuxi",
+        "senderid":"2",
+        "sender":"henry",
+        "subject":"Hello From Henry",
+        "content":"This is the test message from Henry to Yuxi",
+        "star":false
+      }
+    ]
+  },
+  {
+    "userid":"3",
+    "username":"qian",
+    "password":"qian",
+    "name":"Qian Zhang",
+    "email":"qian@gmail.com",
+    "phone":"3421236687",
+    "location":"NY",
+    "inbox":[
+      {
+        "msgid":"3.1",
+        "recieverid":"3",
+        "reciever":"qian",
+        "senderid":"1",
+        "sender":"yuxi",
+        "subject":"Hello From Yuxi",
+        "content":"Test message from Yuxi to Qian",
+        "star":false
+      }
+    ],
+    "sentmail":[
+      {
+        "msgid":"1.2",
+        "recieverid":"1",
+        "reciever":"yuxi",
+        "senderid":"3",
+        "sender":"qian",
+        "subject":"Hello From Qian",
+        "content":"Test message from Qian to Yuxi",
+        "star":false
+      },
+      {
+        "msgid":"2.2",
+        "recieverid":"2",
+        "reciever":"henry",
+        "senderid":"3",
+        "sender":"qian",
+        "subject":"Hello From Qian",
+        "content":"Test message from Qian to Henry",
+        "star":false
+      }
+    ]
+  }
+]
