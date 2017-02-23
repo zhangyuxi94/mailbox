@@ -69,92 +69,75 @@
                 $location.path('/profile');
             }
         }
-        function profileController($scope,userData,$routeParams){
-            $scope.showEditBtn=false;
-            $scope.editInfoSuccess=false;
-            var currentUserData=userData.currentUser;
-            var currentUserId=currentUserData.userid;
-            var inputFiled=document.getElementById("profileForm").getElementsByClassName("form-control");
-            $scope.currentUserData=currentUserData;
-            $scope.copy=angular.copy($scope.currentUserData);
-
-            $scope.userdataEdit=function(){
-                for(var i=0;i<inputFiled.length;i++){
-                    inputFiled[i].removeAttribute("disabled");
-                }
-                $scope.showEditBtn=true;
-            };
-            $scope.submitEdit=function(username,password,name,email,phone,location){
-                for(var i=0;i<inputFiled.length;i++){
-                    inputFiled[i].setAttribute("disabled","true");
-                }
-                var editedThisUserData={
-                    "userid":currentUserId,
-                    "username":username,
-                    "password":password,
-                    "name":name,
-                    "email":email,
-                    "phone":phone,
-                    "location":location
-                };
-                for(var j=0;j<userData.userInfo.length;j++){
-                    for(var j1=0;j1<userData.userInfo[j].inbox.length;j1++){
-                        if(userData.userInfo[j].inbox[j1].senderid===currentUserId){
-                            userData.userInfo[j].inbox[j1].sender=username;
-                        }
-                        if(userData.userInfo[j].inbox[j1].recieverid===currentUserId){
-                            userData.userInfo[j].inbox[j1].reciever=username;
-                        }
-                    }
-                    for(var j2=0;j2<userData.userInfo[j].sentmail.length;j2++){
-                        if(userData.userInfo[j].sentmail[j2].senderid===currentUserId){
-                            userData.userInfo[j].sentmail[j2].sender=username;
-                        }
-                        if(userData.userInfo[j].sentmail[j2].recieverid===currentUserId){
-                            userData.userInfo[j].sentmail[j2].reciever=username;
-                        }
-                    }
-                }
-                editedThisUserData.inbox=userData.userInfo[currentUserId-1].inbox;
-                editedThisUserData.sentmail=userData.userInfo[currentUserId-1].sentmail;
-                // console.log(editedThisUserData);
-                userData.userInfo.splice(currentUserId-1,1,editedThisUserData);
-                updateLocalstorage(userData.userInfo,"userdata");
-                userData.currentUser=userData.userInfo[currentUserId-1];
-                updateSessionstorage(userData.userInfo[currentUserId-1],"currentUser");
-                // var userDataObj=userData.userInfo;
-                // var userDataStr=JSON.stringify(userDataObj);
-                // localStorage.removeItem("userdata");
-                // localStorage.setItem("userdata",userDataStr);
-
-                // for(var j=0;j<userData.messageData.length;j++){
-                //     if(userData.messageData[j].senderid===thisUserId){
-                //         userData.messageData[j].sender=username;
-                //     }
-                //     if(userData.messageData[j].recieverid===thisUserId){
-                //         userData.messageData[j].reciever=username;
-                //     }
-                //     userData.messageData.splice(j,1,userData.messageData[j]);
-                // }
-                // var messageDataObj=userData.messageData;
-                // var messageDataStr=JSON.stringify(messageDataObj);
-                // localStorage.removeItem("messageData");
-                // localStorage.setItem("messageData",messageDataStr);
-
-                // var thisUserMsgs=userData.userInfo[thisUserId-1];
-                // var thisUserSent=userData.userInfo[thisUserId-1].sentmail;
-                // console.log(thisUserMsgs);
-                // console.log(thisUserSent);
+        function profileController($scope,userData,$location){
+            if(userData.currentUser===null){
+                $location.path('/');
+            }
+            else{
                 $scope.showEditBtn=false;
-                $scope.editInfoSuccess=true;
-                $(".editInfoSuccess").removeClass("ng-hide");
-            };
-            $scope.cancelEdit=function(){
-                $scope.userInfo=$scope.copy;
-            };
-            $(document).on("click","#deletePopup",function(){
-                $(".editInfoSuccess").addClass("ng-hide");
-            })
+                $scope.editInfoSuccess=false;
+                var currentUserData=userData.currentUser;
+                var currentUserId=currentUserData.userid;
+                var inputFiled=document.getElementById("profileForm").getElementsByClassName("form-control");
+                $scope.currentUserData=currentUserData;
+                $scope.copy=angular.copy(currentUserData);
+
+                $scope.userdataEdit=function(){
+                    for(var i=0;i<inputFiled.length;i++){
+                        inputFiled[i].removeAttribute("disabled");
+                    }
+                    $scope.showEditBtn=true;
+                };
+                $scope.submitEdit=function(username,password,name,email,phone,location){
+                    for(var i=0;i<inputFiled.length;i++){
+                        inputFiled[i].setAttribute("disabled","true");
+                    }
+                    var editedThisUserData={
+                        "userid":currentUserId,
+                        "username":username,
+                        "password":password,
+                        "name":name,
+                        "email":email,
+                        "phone":phone,
+                        "location":location
+                    };
+                    for(var j=0;j<userData.userInfo.length;j++){
+                        for(var j1=0;j1<userData.userInfo[j].inbox.length;j1++){
+                            if(userData.userInfo[j].inbox[j1].senderid===currentUserId){
+                                userData.userInfo[j].inbox[j1].sender=username;
+                            }
+                            if(userData.userInfo[j].inbox[j1].recieverid===currentUserId){
+                                userData.userInfo[j].inbox[j1].reciever=username;
+                            }
+                        }
+                        for(var j2=0;j2<userData.userInfo[j].sentmail.length;j2++){
+                            if(userData.userInfo[j].sentmail[j2].senderid===currentUserId){
+                                userData.userInfo[j].sentmail[j2].sender=username;
+                            }
+                            if(userData.userInfo[j].sentmail[j2].recieverid===currentUserId){
+                                userData.userInfo[j].sentmail[j2].reciever=username;
+                            }
+                        }
+                    }
+                    editedThisUserData.inbox=userData.userInfo[currentUserId-1].inbox;
+                    editedThisUserData.sentmail=userData.userInfo[currentUserId-1].sentmail;
+                    userData.userInfo.splice(currentUserId-1,1,editedThisUserData);
+                    updateLocalstorage(userData.userInfo,"userdata");
+                    userData.currentUser=userData.userInfo[currentUserId-1];
+                    updateSessionstorage(userData.userInfo[currentUserId-1],"currentUser");
+                    $scope.showEditBtn=false;
+                    $scope.editInfoSuccess=true;
+                    $(".editInfoSuccess").removeClass("ng-hide");
+                };
+                $scope.cancelEdit=function(){
+                    $scope.currentUserData=$scope.copy;
+                    $scope.copy=angular.copy($scope.currentUserData);
+                };
+                $(document).on("click","#deletePopup",function(){
+                    $(".editInfoSuccess").addClass("ng-hide");
+                })
+            }
+
         }
         function messageController($scope,userData,$routeParams){}
         function findUserById(userid,userData){
