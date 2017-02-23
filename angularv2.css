@@ -56,6 +56,10 @@ body{
     box-shadow: 1px 2px 6px 1px rgba(0,0,0,0.16) ;
 }
 
+#profileForm .form-control:disabled{
+    background-color: #f8ede7;
+}
+
 #profileForm legend .btn{
     color: white;
     background-color: #773340;

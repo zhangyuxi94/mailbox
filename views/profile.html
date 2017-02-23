@@ -3,47 +3,49 @@
     <div id="profileForm">
         <form class="form-horizontal">
             <fieldset>
-                <legend>User Profile<button type="submit" class="btn pull-right">Edit</button></legend>
+                <legend>User Profile<button type="submit" class="btn pull-right" ng-click="userdataEdit()">Edit</button></legend>
+                <div ng-show="editInfoSuccess">Update has been successfully saved!<span id="deletePopup">&times;</span></div>
+
                 <div class="form-group">
                     <label for="username" class="col-md-2 control-label">Username</label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control" id="username" placeholder="Username">
+                        <input type="text" ng-model="currentUserData.username" class="form-control" id="username" placeholder="Username" disabled>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="password" class="col-md-2 control-label">Password</label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control" id="password" placeholder="Password">
+                        <input type="text" ng-model="currentUserData.password" class="form-control" id="password" placeholder="Password" disabled>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="name" class="col-md-2 control-label">Name</label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control" id="name" placeholder="Name">
+                        <input type="text" ng-model="currentUserData.name" class="form-control" id="name" placeholder="Name" disabled>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="email" class="col-md-2 control-label">Email</label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control" id="email" placeholder="Email">
+                        <input type="text" ng-model="currentUserData.email" class="form-control" id="email" placeholder="Email" disabled>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="phone" class="col-md-2 control-label">Phone</label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control" id="phone" placeholder="Phone">
+                        <input type="text" ng-model="currentUserData.phone" class="form-control" id="phone" placeholder="Phone" disabled>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="location" class="col-md-2 control-label">Location</label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control" id="location" placeholder="Location">
+                        <input type="text" ng-model="currentUserData.location" class="form-control" id="location" placeholder="Location" disabled>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-10 col-md-offset-2">
-                        <button type="button" class="btn btn-success">Submit</button>
-                        <button type="button" class="btn btn-default">Cancel</button>
+                        <button  ng-show="showEditBtn" type="button" class="btn btn-success" ng-click="submitEdit(currentUserData.username,currentUserData.password,currentUserData.name,currentUserData.email,currentUserData.phone,currentUserData.location)">Submit</button>
+                        <button  ng-show="showEditBtn" type="button" class="btn btn-default" ng-click="cancelEdit()">Cancel</button>
                     </div>
                 </div>
             </fieldset>
