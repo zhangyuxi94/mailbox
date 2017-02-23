@@ -106,10 +106,16 @@ body{
 }
 
 /*messageInbox*/
+#messageBox .table{
+    text-align: center;
+}
+
 #messageBox .table th{
     background-color: #98878f;
     color: white;
+    text-align: center;
 }
+
 #messageBox .table tr input[type=button]{
     border: 0;
     border-radius: 3px;

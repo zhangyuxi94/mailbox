@@ -7,6 +7,25 @@
     </ul>
 
     <div id="messageBox">
-       sss
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>To</th>
+                <th>Subject</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="sent in thisUserSent">
+                <td>{{sent.reciever}}</td>
+                <td>{{sent.subject}}</td>
+                <td>
+                    <input type="button" style="background-color: #5eb85e;color:white" value="view" ng-click="viewSent($index)"/>
+                    <input type="button" value="&starf;" id="sentStared{{$index}}" class="notstared" ng-click="starSent($index)"/>
+                    <input type="button" style="background-color: #c8322e;color:white" value="&times;" ng-click="deleteSent($index)"/>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>

@@ -16,26 +16,15 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Column content</td>
-                <td>Column content</td>
+            <tr ng-repeat="msgs in thisUserMsgs">
+                <td>{{msgs.sender}}</td>
+                <td>{{msgs.subject}}</td>
                 <td>
                     <input type="button" style="background-color: #5eb85e;color:white" value="view" ng-click="viewMsg($index)"/>
                     <input type="button" value="&starf;" id="stared{{$index}}" class="notstared" ng-click="starMsg($index)"/>
                     <input type="button" style="background-color: #c8322e;color:white" value="&times;" ng-click="deleteMsg($index)"/>
                 </td>
             </tr>
-            <tr>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-            </tr>
-            <tr>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-            </tr>
-
             </tbody>
         </table>
     </div>

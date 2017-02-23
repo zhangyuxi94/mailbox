@@ -4,7 +4,7 @@
         <form class="form-horizontal">
             <fieldset>
                 <legend>User Profile<button type="submit" class="btn pull-right" ng-click="userdataEdit()">Edit</button></legend>
-                <div ng-show="editInfoSuccess">Update has been successfully saved!<span id="deletePopup">&times;</span></div>
+                <div ng-show="editInfoSuccess" class="alert alert-success editInfoSuccess">Update has been successfully saved!<span id="deletePopup" style="cursor: pointer" class="pull-right">&times;</span></div>
 
                 <div class="form-group">
                     <label for="username" class="col-md-2 control-label">Username</label>

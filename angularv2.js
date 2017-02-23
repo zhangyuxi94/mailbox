@@ -137,9 +137,87 @@
                     $(".editInfoSuccess").addClass("ng-hide");
                 })
             }
-
         }
-        function messageController($scope,userData,$routeParams){}
+        function messageController($scope,userData,$location){
+            if(userData.currentUser===null){
+                $location.path('/');
+            }else{
+                var currentUserData=userData.currentUser;
+                var currentUserId=currentUserData.userid;
+                $scope.currentUserData=currentUserData;
+                var thisUserMsgs=currentUserData.inbox;
+                var thisUserSent=currentUserData.sentmail;
+                $scope.thisUserMsgs=thisUserMsgs;
+                $scope.thisUserSent=thisUserSent;
+                $(document).ready(function(){
+                    for(var aa=0;aa<thisUserMsgs.length;aa++){
+                        console.log(thisUserMsgs[aa]);
+                        if(thisUserMsgs[aa].star===true){
+                            $("#stared"+aa).removeClass("notstared")
+                                            .addClass("stared");
+                        }else if(thisUserMsgs[aa].star===false){
+                            $("#stared"+aa).removeClass("stared")
+                                            .addClass("notstared");
+                        }
+                    }
+                    // console.log(thisUserSent);
+                    for(var bb=0;bb<thisUserSent.length;bb++){
+                        if(thisUserSent[bb].star===true){
+                            $("#sentStared"+bb).removeClass("notstared")
+                                .addClass("stared");
+                        }else if(thisUserSent[bb].star===false){
+                            $("#sentStared"+bb).removeClass("stared")
+                                .addClass("notstared");
+                        }
+                    }
+                });
+                $scope.viewMsg=function (trIndex) {
+                    alert(trIndex);
+                };
+                $scope.viewSent=function (trIndex) {
+                    alert(trIndex);
+                };
+                $scope.deleteMsg=function(trIndex){
+                    thisUserMsgs.splice(trIndex,1);
+                    updateLocalstorage(userData.userInfo,"userdata");
+                    updateSessionstorage(currentUserData,"currentUser");
+                };
+                $scope.deleteSent=function(trIndex){
+                    thisUserSent.splice(trIndex,1);
+                    updateLocalstorage(userData.userInfo,"userdata");
+                    updateSessionstorage(currentUserData,"currentUser");
+                };
+                $scope.starMsg=function(trIndex){
+                    if(thisUserMsgs[trIndex].star===false){
+                        $("#stared"+trIndex).removeClass("notstared")
+                            .addClass("stared");
+                        thisUserMsgs[trIndex].star=true;
+                    }else if(thisUserMsgs[trIndex].star===true){
+                        $("#stared"+trIndex).removeClass("stared")
+                            .addClass("notstared");
+                        thisUserMsgs[trIndex].star=false;
+                    }
+                    updateLocalstorage(userData.userInfo,"userdata");
+                    updateSessionstorage(currentUserData,"currentUser");
+                };
+                $scope.starSent=function(trIndex){
+                    var sentStarted=$("#sentStarted"+trIndex);
+                    if(thisUserSent[trIndex].star===false){
+                        $("#sentStared"+trIndex).removeClass("notstared")
+                            .addClass("stared");
+                        thisUserSent[trIndex].star=true;
+                    }else if(thisUserSent[trIndex].star===true){
+                        $("#sentStared"+trIndex).removeClass("stared")
+                            .addClass("notstared");
+                        thisUserSent[trIndex].star=false;
+                    }
+                    updateLocalstorage(userData.userInfo,"userdata");
+                    updateSessionstorage(currentUserData,"currentUser");
+                };
+                // updateLocalstorage(userData.userInfo,"userdata");
+                //compose
+            }
+        }
         function findUserById(userid,userData){
             for(var i=0;i<userData.length;i++){
                 if(userData[i].userid===userid){
