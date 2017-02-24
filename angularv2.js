@@ -151,7 +151,7 @@
                 $scope.thisUserSent=thisUserSent;
                 $(document).ready(function(){
                     for(var aa=0;aa<thisUserMsgs.length;aa++){
-                        console.log(thisUserMsgs[aa]);
+                        // console.log(thisUserMsgs[aa]);
                         if(thisUserMsgs[aa].star===true){
                             $("#stared"+aa).removeClass("notstared")
                                             .addClass("stared");
@@ -160,7 +160,6 @@
                                             .addClass("notstared");
                         }
                     }
-                    // console.log(thisUserSent);
                     for(var bb=0;bb<thisUserSent.length;bb++){
                         if(thisUserSent[bb].star===true){
                             $("#sentStared"+bb).removeClass("notstared")
@@ -214,8 +213,39 @@
                     updateLocalstorage(userData.userInfo,"userdata");
                     updateSessionstorage(currentUserData,"currentUser");
                 };
-                // updateLocalstorage(userData.userInfo,"userdata");
                 //compose
+                $scope.usernameNotFind=false;
+                $scope.sendMail=function(mailReceiver,mailSubject,mailContent){
+                    console.log(mailReceiver+" "+mailSubject+" "+mailContent);
+                    var receiverInfo=findUserByUsername(mailReceiver,userData.userInfo);
+                    var senderInfo=findUserById(currentUserId,userData.userInfo);
+                    if(receiverInfo===undefined){
+                        $scope.usernameNotFind=true;
+                    }else{
+                        var thisTime=Date.now();
+                        var newMsg={
+                            "msgid":"msg"+thisTime,
+                            "recieverid":receiverInfo.userid,
+                            "reciever":receiverInfo.username,
+                            "senderid":currentUserId,
+                            "sender":senderInfo.username,
+                            "subject":mailSubject,
+                            "content":mailContent,
+                            "star":false
+                        };
+                        userData.userInfo[currentUserId-1].sentmail.push(newMsg);
+                        userData.userInfo[receiverInfo.userid-1].inbox.push(newMsg);
+                        updateLocalstorage(userData.userInfo,"userdata");
+                        updateSessionstorage(currentUserData,"currentUser");
+                        $location.path('/sentmail');
+                    }
+                };
+                $scope.cancelSendMail=function () {
+                    $scope.usernameNotFind=false;
+                    $scope.mailReceiver=undefined;
+                    $scope.mailSubject=undefined;
+                    $scope.mailContent=undefined;
+                }
             }
         }
         function findUserById(userid,userData){

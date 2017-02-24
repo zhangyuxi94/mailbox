@@ -6,7 +6,35 @@
         <li style="background-color: rgba(239, 229, 224, 0.96)"><a style="color: #773340" href="#/compose">COMPOSE</a></li>
     </ul>
     <div id="messageBox">
-        compose
+        <form class="form-horizontal">
+            <fieldset>
+                <div class="form-group">
+                    <label for="receiver" class="col-md-2 control-label">To:</label>
+                    <div class="col-md-10">
+                        <input ng-model="mailReceiver" type="text" class="form-control" id="receiver" placeholder="Enter the receiver username">
+                        <div class="alert alert-warning" ng-show="usernameNotFind">Username not found!</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject" class="col-md-2 control-label">Subject: </label>
+                    <div class="col-md-10">
+                        <input ng-model="mailSubject" type="text" class="form-control" id="subject" placeholder="Title of the message">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="content" class="col-md-2 control-label">Content: </label>
+                    <div class="col-md-10">
+                        <textarea ng-model="mailContent" class="form-control" id="content" placeholder="Content of the message" rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10 col-md-offset-2">
+                        <button type="button" class="btn btn-success" ng-click="sendMail(mailReceiver,mailSubject,mailContent)">Send</button>
+                        <button type="button" class="btn btn-default" ng-click="cancelSendMail()">Cancel</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
     </div>
 </div>
 
