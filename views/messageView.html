@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<my-navbar></my-navbar>
+<div class="messagePage">
+    <ul class="messageTags">
+        <li><a href="#/inbox">INBOX</a></li>
+        <li><a href="#/sentmail">SENT MAIL</a></li>
+        <li><a href="#/compose">COMPOSE</a></li>
+    </ul>
 
-</body>
-</html>
+    <div id="messageBox">
+
+        <ul class="list-group viewMessagePage">
+            <li class="list-group-item">Subject: {{currentMsgView.subject}}</li>
+            <li class="list-group-item">From: {{currentMsgView.sender}}</li>
+            <li class="list-group-item">To: {{currentMsgView.reciever}}</li>
+            <li class="list-group-item">Content: {{currentMsgView.content}}</li>
+        </ul>
+    </div>
+</div>

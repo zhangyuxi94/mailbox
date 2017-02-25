@@ -79,20 +79,20 @@ body{
     color: #773340;
 }
 
-.messagePage ul{
+.messagePage .messageTags{
     list-style: none;
     padding-left: 10px;
     margin-bottom: 0;
 }
 
-.messagePage ul li{
+.messagePage .messageTags li{
     background-color: rgba(152, 135, 143, 0.96);
     border-radius: 10px 10px 0 0;
     display: inline-block;
     padding: 10px 20px;
 }
 
-.messagePage ul a{
+.messagePage .messageTags a{
     text-decoration: none;
     color: #ffffff;
 }
@@ -132,4 +132,9 @@ body{
 .notstared{
     background-color: #ffffff;
     color: #f0ad51
+}
+
+.viewMessagePage{
+    width: 70%;
+    margin: 0 auto;
 }

@@ -4,6 +4,7 @@
 (function(){
     var userdata=[];
     var currentUser=null;
+    var currentMsg=null;
     var xhttp=new XMLHttpRequest();
     if(localStorage.getItem("userdata")===null){
         xhttp.onreadystatechange=function(){
@@ -43,6 +44,10 @@
                     templateUrl:"../views/messageCompose.html",
                     controller:"messageController"
                 })
+                .when("/view",{
+                    templateUrl:"../views/messageView.html",
+                    controller:"viewMsgController"
+                })
                 .otherwise({
                     redirectTo:"/"
                 })
@@ -50,7 +55,8 @@
         app.factory("userData",function(){
             return{
                 userInfo:userdata,
-                currentUser:currentUser
+                currentUser:currentUser,
+                currentMsg:currentMsg
             }
         });
         app.directive("myNavbar",function(){
@@ -61,6 +67,7 @@
         app.controller("loginController",loginController);
         app.controller("profileController",profileController);
         app.controller("messageController",messageController);
+        app.controller("viewMsgController",viewMsgController);
         function loginController($scope,$location,userData){
             $scope.userLogin=function(username,password){
                 var currentUserData=findUserByUsernameAndPswd(username,password,userData.userInfo);
@@ -151,7 +158,6 @@
                 $scope.thisUserSent=thisUserSent;
                 $(document).ready(function(){
                     for(var aa=0;aa<thisUserMsgs.length;aa++){
-                        // console.log(thisUserMsgs[aa]);
                         if(thisUserMsgs[aa].star===true){
                             $("#stared"+aa).removeClass("notstared")
                                             .addClass("stared");
@@ -171,10 +177,13 @@
                     }
                 });
                 $scope.viewMsg=function (trIndex) {
-                    alert(trIndex);
+                    $location.path('/view');
+                    userData.currentMsg=thisUserMsgs[trIndex];
                 };
                 $scope.viewSent=function (trIndex) {
-                    alert(trIndex);
+                    $location.path('/view');
+                    userData.currentMsg=thisUserSent[trIndex];
+                    console.log(userData.currentMsg);
                 };
                 $scope.deleteMsg=function(trIndex){
                     thisUserMsgs.splice(trIndex,1);
@@ -216,7 +225,6 @@
                 //compose
                 $scope.usernameNotFind=false;
                 $scope.sendMail=function(mailReceiver,mailSubject,mailContent){
-                    console.log(mailReceiver+" "+mailSubject+" "+mailContent);
                     var receiverInfo=findUserByUsername(mailReceiver,userData.userInfo);
                     var senderInfo=findUserById(currentUserId,userData.userInfo);
                     if(receiverInfo===undefined){
@@ -248,6 +256,16 @@
                 }
             }
         }
+
+        function viewMsgController($scope,$location,userData){
+            if(userData.currentMsg===null){
+                $location.path('/');
+            }else{
+                console.log(userData.currentMsg);
+                $scope.currentMsgView= userData.currentMsg;
+            }
+        }
+
         function findUserById(userid,userData){
             for(var i=0;i<userData.length;i++){
                 if(userData[i].userid===userid){
