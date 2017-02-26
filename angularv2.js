@@ -100,7 +100,7 @@
             }
         }
         function profileController($scope,userData,$location){
-            if(sessionStorage.getItem("currentUser")===null){
+            if(sessionStorage.getItem("currentUser")===null||userData.currentUser===null){
                 $location.path('/');
             }
             else{
