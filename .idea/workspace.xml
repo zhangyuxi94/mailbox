@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45bfd7e6-d339-45d3-8257-c64a756c3a6d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angularv2.js" afterPath="$PROJECT_DIR$/angularv2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/login.html" afterPath="$PROJECT_DIR$/views/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/navTemplate.html" afterPath="$PROJECT_DIR$/views/navTemplate.html" />
     </list>
     <ignored path="angularV2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,54 +28,52 @@
       <file leaf-file-name="angularv2.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/angularv2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="255" column="73" selection-start-line="255" selection-start-column="73" selection-end-line="255" selection-end-column="73" />
+            <state relative-caret-position="285">
+              <caret line="63" column="40" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
               <folding>
-                <element signature="e#2176#2277#0" expanded="false" />
-                <element signature="e#7170#8177#0" expanded="false" />
-                <element signature="e#12550#12770#0" expanded="false" />
-                <element signature="e#14350#16091#0" expanded="false" />
+                <element signature="e#2459#2560#0" expanded="false" />
+                <element signature="e#5161#5481#0" expanded="false" />
+                <element signature="e#7330#7475#0" expanded="false" />
+                <element signature="e#7588#7670#0" expanded="false" />
+                <element signature="e#8291#9298#0" expanded="false" />
+                <element signature="e#13671#13891#0" expanded="false" />
+                <element signature="e#15518#17259#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userdata.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/userdata.json">
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2204">
-              <caret line="116" column="6" selection-start-line="105" selection-start-column="12" selection-end-line="116" selection-end-column="6" />
+            <state relative-caret-position="315">
+              <caret line="21" column="106" selection-start-line="21" selection-start-column="106" selection-end-line="21" selection-end-column="106" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="angularv2.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angularv2.css">
+      <file leaf-file-name="messageCompose.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/messageCompose.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2565">
-              <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="171">
+              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+              <folding>
+                <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="messageView.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/messageView.html">
+      <file leaf-file-name="navTemplate.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/navTemplate.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="messageSentMail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/messageSentMail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-              <folding />
+            <state relative-caret-position="247">
+              <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,8 +99,6 @@
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/userdata.json" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/views/navTemplate.html" />
-        <option value="$PROJECT_DIR$/views/login.html" />
         <option value="$PROJECT_DIR$/views/profile.html" />
         <option value="$PROJECT_DIR$/views/messageSentMail.html" />
         <option value="$PROJECT_DIR$/views/messageInbox.html" />
@@ -109,6 +106,8 @@
         <option value="$PROJECT_DIR$/angularv2.css" />
         <option value="$PROJECT_DIR$/views/test.html" />
         <option value="$PROJECT_DIR$/views/messageView.html" />
+        <option value="$PROJECT_DIR$/views/login.html" />
+        <option value="$PROJECT_DIR$/views/navTemplate.html" />
         <option value="$PROJECT_DIR$/angularv2.js" />
       </list>
     </option>
@@ -120,8 +119,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="128" />
-    <option name="y" value="22" />
+    <option name="x" value="289" />
+    <option name="y" value="90" />
     <option name="width" value="1256" />
     <option name="height" value="690" />
   </component>
@@ -271,15 +270,15 @@
       <updated>1487792918534</updated>
       <workItem from="1487792920126" duration="13760000" />
       <workItem from="1487862877040" duration="31405000" />
-      <workItem from="1488120897094" duration="6166000" />
+      <workItem from="1488120897094" duration="8445000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51331000" />
+    <option name="totallyTimeSpent" value="53610000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="128" y="22" width="1256" height="690" extended-state="0" />
+    <frame x="289" y="90" width="1256" height="690" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25241935" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -321,10 +320,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2176#2277#0" expanded="false" />
-            <element signature="e#7170#8177#0" expanded="false" />
-            <element signature="e#12550#12770#0" expanded="false" />
-            <element signature="e#14350#16091#0" expanded="false" />
+            <element signature="e#2459#2560#0" expanded="false" />
+            <element signature="e#5161#5481#0" expanded="false" />
+            <element signature="e#7330#7475#0" expanded="false" />
+            <element signature="e#7588#7670#0" expanded="false" />
+            <element signature="e#8291#9298#0" expanded="false" />
+            <element signature="e#13671#13891#0" expanded="false" />
+            <element signature="e#15518#17259#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -366,10 +368,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2176#2277#0" expanded="false" />
-            <element signature="e#7170#8177#0" expanded="false" />
-            <element signature="e#12550#12770#0" expanded="false" />
-            <element signature="e#14350#16091#0" expanded="false" />
+            <element signature="e#2459#2560#0" expanded="false" />
+            <element signature="e#5161#5481#0" expanded="false" />
+            <element signature="e#7330#7475#0" expanded="false" />
+            <element signature="e#7588#7670#0" expanded="false" />
+            <element signature="e#8291#9298#0" expanded="false" />
+            <element signature="e#13671#13891#0" expanded="false" />
+            <element signature="e#15518#17259#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -393,6 +398,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="8" column="69" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="69" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -400,20 +406,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/navTemplate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="7" column="92" selection-start-line="7" selection-start-column="92" selection-end-line="7" selection-end-column="92" />
         </state>
       </provider>
     </entry>
@@ -431,34 +423,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/messageCompose.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userdata.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2204">
-          <caret line="116" column="6" selection-start-line="105" selection-start-column="12" selection-end-line="116" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/test.html" />
     <entry file="file://$PROJECT_DIR$/angularv2.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2565">
           <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/messageSentMail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -471,15 +440,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/userdata.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="108" column="25" selection-start-line="108" selection-start-column="25" selection-end-line="108" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/messageSentMail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/navTemplate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/messageCompose.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="106" selection-start-line="21" selection-start-column="106" selection-end-line="21" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/angularv2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="255" column="73" selection-start-line="255" selection-start-column="73" selection-end-line="255" selection-end-column="73" />
+        <state relative-caret-position="285">
+          <caret line="63" column="40" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
           <folding>
-            <element signature="e#2176#2277#0" expanded="false" />
-            <element signature="e#7170#8177#0" expanded="false" />
-            <element signature="e#12550#12770#0" expanded="false" />
-            <element signature="e#14350#16091#0" expanded="false" />
+            <element signature="e#2459#2560#0" expanded="false" />
+            <element signature="e#5161#5481#0" expanded="false" />
+            <element signature="e#7330#7475#0" expanded="false" />
+            <element signature="e#7588#7670#0" expanded="false" />
+            <element signature="e#8291#9298#0" expanded="false" />
+            <element signature="e#13671#13891#0" expanded="false" />
+            <element signature="e#15518#17259#0" expanded="false" />
           </folding>
         </state>
       </provider>

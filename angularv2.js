@@ -52,11 +52,17 @@
                     redirectTo:"/"
                 })
         });
-        app.factory("userData",function(){
+        app.factory("userData",function($location){
             return{
                 userInfo:userdata,
                 currentUser:currentUser,
-                currentMsg:currentMsg
+                currentMsg:currentMsg,
+                logout:function(){
+                    // currentUser=undefined;
+                    sessionStorage.removeItem("currentUser");
+                    currentUser=sessionStorage.getItem("currentUser");
+                    $location.path('/');
+                }
             }
         });
         app.directive("myNavbar",function(){
@@ -69,11 +75,29 @@
         app.controller("messageController",messageController);
         app.controller("viewMsgController",viewMsgController);
         function loginController($scope,$location,userData){
+            $scope.matchornot=true;
+            $scope.notFillUname=false;
             $scope.userLogin=function(username,password){
-                var currentUserData=findUserByUsernameAndPswd(username,password,userData.userInfo);
-                userData.currentUser=currentUserData;
-                updateSessionstorage(currentUserData,"currentUser");
-                $location.path('/profile');
+                if(username===""||username===undefined||password===""||password===undefined){
+                    $scope.matchornot=true;
+                    if(username===""||username===undefined){
+                        $scope.notFillUname=true;
+                    }
+                    if(password===""||password===undefined){
+                        $scope.notFillPswd=true;
+                    }
+                }else{
+                    $scope.notFillUname=false;
+                    $scope.notFillPswd=false;
+                    var currentUserData=findUserByUsernameAndPswd(username,password,userData.userInfo);
+                    if(currentUserData===undefined){
+                        $scope.matchornot=false;
+                    }else{
+                        userData.currentUser=currentUserData;
+                        updateSessionstorage(currentUserData,"currentUser");
+                        $location.path('/profile');
+                    }
+                }
             }
         }
         function profileController($scope,userData,$location){
@@ -140,6 +164,7 @@
                     $scope.currentUserData=$scope.copy;
                     $scope.copy=angular.copy($scope.currentUserData);
                 };
+                $scope.logout=userData.logout;
                 $(document).on("click","#deletePopup",function(){
                     $(".editInfoSuccess").addClass("ng-hide");
                 })
@@ -264,6 +289,7 @@
                     $scope.mailSubject=undefined;
                     $scope.mailContent=undefined;
                 }
+                $scope.logout=userData.logout;
             }
         }
 
