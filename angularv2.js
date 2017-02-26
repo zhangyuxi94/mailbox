@@ -183,7 +183,7 @@
                 $scope.viewSent=function (trIndex) {
                     $location.path('/view');
                     userData.currentMsg=thisUserSent[trIndex];
-                    console.log(userData.currentMsg);
+                    // console.log(userData.currentMsg);
                 };
                 $scope.deleteMsg=function(trIndex){
                     thisUserMsgs.splice(trIndex,1);
@@ -231,6 +231,16 @@
                         $scope.usernameNotFind=true;
                     }else{
                         var thisTime=Date.now();
+                        var newSent={
+                            "msgid":"msg"+thisTime,
+                            "recieverid":receiverInfo.userid,
+                            "reciever":receiverInfo.username,
+                            "senderid":currentUserId,
+                            "sender":senderInfo.username,
+                            "subject":mailSubject,
+                            "content":mailContent,
+                            "star":false
+                        };
                         var newMsg={
                             "msgid":"msg"+thisTime,
                             "recieverid":receiverInfo.userid,
@@ -241,7 +251,7 @@
                             "content":mailContent,
                             "star":false
                         };
-                        userData.userInfo[currentUserId-1].sentmail.push(newMsg);
+                        thisUserSent.push(newSent);
                         userData.userInfo[receiverInfo.userid-1].inbox.push(newMsg);
                         updateLocalstorage(userData.userInfo,"userdata");
                         updateSessionstorage(currentUserData,"currentUser");
@@ -261,7 +271,7 @@
             if(userData.currentMsg===null){
                 $location.path('/');
             }else{
-                console.log(userData.currentMsg);
+                // console.log(userData.currentMsg);
                 $scope.currentMsgView= userData.currentMsg;
             }
         }
